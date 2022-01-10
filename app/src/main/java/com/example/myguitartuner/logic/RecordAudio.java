@@ -19,7 +19,7 @@ import java.io.InputStream;
 /**
  * Class in charge of recording the audio
  */
-public class MyAudioRecorder {
+public class RecordAudio {
     /**
      * Source for the audio input
      */
@@ -93,7 +93,7 @@ public class MyAudioRecorder {
      * the buffer size in bytes, and sets up the recorder for the first time.
      * @param fileName, the filename under which the file will be saved to.
      */
-    public MyAudioRecorder(String fileName){
+    public RecordAudio(String fileName){
         this.file = new File(APP_DIRECTORY.getPath() +"/"+  fileName + ".pcm");
 
         data = new byte[BUFFER_SIZE_IN_BYTES];

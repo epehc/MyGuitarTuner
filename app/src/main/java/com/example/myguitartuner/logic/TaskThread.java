@@ -12,7 +12,7 @@ import com.example.myguitartuner.MainActivity;
 /**
  * Class that is in charge of recording and restarting the recording every so often, to make sure there are audio files that can be used to analyze the audio
  */
-public class MyThread extends Thread{
+public class TaskThread extends Thread{
 
     /**
      * Button object used for calling the update UI method of the MainActivity.
@@ -21,9 +21,9 @@ public class MyThread extends Thread{
     private final Button button;
 
     /**
-     * MyAudioRecorder Object, in charge of doing the actual recording of the audio
+     * RecordAudio Object, in charge of doing the actual recording of the audio
      */
-    private MyAudioRecorder audioRecorder;
+    private RecordAudio audioRecorder;
 
     /**
      * Boolean in charge of controlling if the thread should be running or not
@@ -47,12 +47,12 @@ public class MyThread extends Thread{
     private double highestFrequency;
 
     /**
-     * Contstructor for a MyThread object
+     * Contstructor for a TaskThread object
      * @param fileName the filename to be given to each recording.
      */
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public MyThread(String fileName, MainActivity main, Button button){
-        this.audioRecorder = new MyAudioRecorder(fileName);
+    public TaskThread(String fileName, MainActivity main, Button button){
+        this.audioRecorder = new RecordAudio(fileName);
         this.main = main;
         this.button = button;
 

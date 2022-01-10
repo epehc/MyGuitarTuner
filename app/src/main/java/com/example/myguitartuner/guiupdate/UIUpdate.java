@@ -10,7 +10,7 @@ import com.example.myguitartuner.data.GuitarString;
 /**
  * Class responsible for performing GUI update operations
  */
-public class GUIElementsChange implements Runnable {
+public class UIUpdate implements Runnable {
 
     /**
      * Button used to identify which button was pressed
@@ -33,7 +33,7 @@ public class GUIElementsChange implements Runnable {
      * @param button Button pressed
      * @param main Activity where GUI is to be updated
      */
-    public GUIElementsChange(double frequency, Button button, MainActivity main){
+    public UIUpdate(double frequency, Button button, MainActivity main){
         this.frequency = frequency;
         this.button = button;
         this.main = main;

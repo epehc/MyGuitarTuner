@@ -11,7 +11,7 @@ public class FastFourierTransform {
     /**
      * Array of Complex numbers to be transformed with the FFT algorithm.
      */
-    private static Complex[] buffer;
+    private static ComplexNumber[] buffer;
 
     /**
      * absolute values of the frequencies, transforms the complex numbers into a double
@@ -24,14 +24,14 @@ public class FastFourierTransform {
     private double highestFrequency;
 
     /**
-     * Constructor for a FastFourierTransform Object. It takes the PCM data array recorded with the MyThread Class,
+     * Constructor for a FastFourierTransform Object. It takes the PCM data array recorded with the TaskThread Class,
      * and transforms its values to a complex number.
      * @param pcmData
      */
     public FastFourierTransform(double[] pcmData) {
-        buffer = new Complex[pcmData.length];
+        buffer = new ComplexNumber[pcmData.length];
         for (int i = 0; i < pcmData.length; i++) {
-            buffer[i] = new Complex(pcmData[i], 0);
+            buffer[i] = new ComplexNumber(pcmData[i], 0);
         }
     }
 
@@ -64,7 +64,7 @@ public class FastFourierTransform {
         for (int j = 1; j < buffer.length / 2; j++) {
 
             int swapPos = bitReverse(j, bits);
-            Complex temp = buffer[j];
+            ComplexNumber temp = buffer[j];
             buffer[j] = buffer[swapPos];
             buffer[swapPos] = temp;
         }
@@ -74,11 +74,11 @@ public class FastFourierTransform {
 
                     int evenIndex = i + k;
                     int oddIndex = i + k + (N / 2);
-                    Complex even = buffer[evenIndex];
-                    Complex odd = buffer[oddIndex];
+                    ComplexNumber even = buffer[evenIndex];
+                    ComplexNumber odd = buffer[oddIndex];
 
                     double term = (-2 * PI * k) / (double) N;
-                    Complex exp = (new Complex(cos(term), sin(term)).mult(odd));
+                    ComplexNumber exp = (new ComplexNumber(cos(term), sin(term)).mult(odd));
 
                     buffer[evenIndex] = even.add(exp);
                     buffer[oddIndex] = even.sub(exp);
