@@ -1,4 +1,4 @@
-package com.example.myguitartuner.logic;
+package com.example.myguitartuner.guiupdate;
 
 import android.annotation.SuppressLint;
 import android.widget.Button;
@@ -13,12 +13,26 @@ import com.example.myguitartuner.data.GuitarString;
 public class GUIElementsChange implements Runnable {
 
     /**
-     * 
+     * Button used to identify which button was pressed
      */
     private final Button button;
+
+    /**
+     * Frequency used to calculate in which range it currently is
+     */
     private double frequency;
+
+    /**
+     * MainActivity Object, where the GUI updates should take place.
+     */
     private MainActivity main;
 
+    /**
+     * Constructor
+     * @param frequency current frequency
+     * @param button Button pressed
+     * @param main Activity where GUI is to be updated
+     */
     public GUIElementsChange(double frequency, Button button, MainActivity main){
         this.frequency = frequency;
         this.button = button;
@@ -31,6 +45,13 @@ public class GUIElementsChange implements Runnable {
         changeUIElements(frequency, button);
     }
 
+    /**
+     * Method to change the UI elements. It takes as parameters the frequency and the button that is
+     * currently in use. using the frequency, it will compare it to the different ranges it can be
+     * (using the GuitarString Enum), to determine to which state the GUI should change.
+     * @param frequency last calculated frequency
+     * @param button currently pressed button
+     */
     @SuppressLint("NonConstantResourceId")
     public void changeUIElements(double frequency, Button button){
         switch (button.getId()){

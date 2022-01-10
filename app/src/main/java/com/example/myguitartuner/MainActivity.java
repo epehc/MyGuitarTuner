@@ -16,7 +16,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import com.example.myguitartuner.logic.GUIElementsChange;
+import com.example.myguitartuner.guiupdate.GUIElementsChange;
 import com.example.myguitartuner.logic.MyButton;
 
 import java.io.File;
