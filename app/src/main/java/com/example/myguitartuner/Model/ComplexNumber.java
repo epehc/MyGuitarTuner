@@ -1,4 +1,4 @@
-package com.example.myguitartuner.logic;
+package com.example.myguitartuner.Model;
 
 /**
  * Complex number class, representing the behavior of a complex number
@@ -8,12 +8,12 @@ public class ComplexNumber {
     /**
      * Real part of the complex number
      */
-    public final double re;
+    private final double re;
 
     /**
      * Imaginary part of the complex number
      */
-    public final double im;
+    private final double im;
 
     /**
      * Empty Constructor
@@ -28,6 +28,22 @@ public class ComplexNumber {
     public ComplexNumber(double r, double i) {
         re = r;
         im = i;
+    }
+
+    /**
+     * Getter for real part of the ComplexNumber
+     * @return
+     */
+    public double getRe() {
+        return re;
+    }
+
+    /**
+     * Getter for imaginary part of the ComplexNumber
+     * @return
+     */
+    public double getIm() {
+        return im;
     }
 
     /**

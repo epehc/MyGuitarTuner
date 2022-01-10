@@ -1,11 +1,8 @@
-package com.example.myguitartuner.guiupdate;
+package com.example.myguitartuner.View;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 
 import android.widget.Button;
-
-import androidx.constraintlayout.utils.widget.MockView;
 
 import com.example.myguitartuner.MainActivity;
 import com.example.myguitartuner.R;

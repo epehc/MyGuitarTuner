@@ -1,4 +1,4 @@
-package com.example.myguitartuner.logic;
+package com.example.myguitartuner.Model;
 
 import static com.example.myguitartuner.MainActivity.APP_DIRECTORY;
 
@@ -173,7 +173,7 @@ public class RecordAudio {
      * Method used to set up the AudioRecord object every time it is needed.
      */
     @SuppressLint("MissingPermission")
-    public void setUpRecorder(){
+    private void setUpRecorder(){
         ar = new AudioRecord(AUDIO_SOURCE,
                 RECORDER_SAMPLERATE,
                 RECORDER_CHANNELS,

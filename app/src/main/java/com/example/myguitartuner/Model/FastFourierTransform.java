@@ -1,4 +1,4 @@
-package com.example.myguitartuner.logic;
+package com.example.myguitartuner.Model;
 
 import static java.lang.Math.*;
 
@@ -41,7 +41,7 @@ public class FastFourierTransform {
      * @param bits
      * @return
      */
-    public static int bitReverse(int n, int bits) {
+    private static int bitReverse(int n, int bits) {
         int reversedN = n;
         int count = bits - 1;
 
@@ -59,7 +59,7 @@ public class FastFourierTransform {
      * Actual FastFourierTransform algorithm, to change the complex numbers from time domain to
      * frequency domain.
      */
-    static void fft() {
+    public static void fft() {
         int bits = (int) (log(buffer.length) / log(2));
         for (int j = 1; j < buffer.length / 2; j++) {
 
@@ -97,7 +97,7 @@ public class FastFourierTransform {
     private static double[] getAbsoluteValues(){
         double[] result = new double[buffer.length];
         for(int i = 0; i< buffer.length; i++){
-            result[i] = sqrt((buffer[i].re * buffer[i].re) + (buffer[i].im * buffer[i].im) );
+            result[i] = sqrt((buffer[i].getRe() * buffer[i].getRe()) + (buffer[i].getIm() * buffer[i].getIm()) );
 
         }
 

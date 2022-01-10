@@ -1,4 +1,4 @@
-package com.example.myguitartuner.data;
+package com.example.myguitartuner.Model;
 
 /**
  * Enum GuitarString that has all required values for comparing the frequencies

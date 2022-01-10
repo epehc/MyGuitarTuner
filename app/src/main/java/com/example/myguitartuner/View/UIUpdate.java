@@ -1,11 +1,11 @@
-package com.example.myguitartuner.guiupdate;
+package com.example.myguitartuner.View;
 
 import android.annotation.SuppressLint;
 import android.widget.Button;
 
 import com.example.myguitartuner.MainActivity;
 import com.example.myguitartuner.R;
-import com.example.myguitartuner.data.GuitarString;
+import com.example.myguitartuner.Model.GuitarString;
 
 /**
  * Class responsible for performing GUI update operations

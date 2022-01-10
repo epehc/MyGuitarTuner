@@ -1,4 +1,4 @@
-package com.example.myguitartuner.logic;
+package com.example.myguitartuner.Controller;
 
 import android.os.Build;
 import android.widget.Button;

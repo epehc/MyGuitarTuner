@@ -16,8 +16,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import com.example.myguitartuner.guiupdate.UIUpdate;
-import com.example.myguitartuner.logic.Task;
+import com.example.myguitartuner.View.UIUpdate;
+import com.example.myguitartuner.Controller.Task;
 
 import java.io.File;
 

@@ -1,6 +1,6 @@
-package com.example.myguitartuner.logic;
+package com.example.myguitartuner.Controller;
 
-import static com.example.myguitartuner.logic.FastFourierTransform.fft;
+import static com.example.myguitartuner.Model.FastFourierTransform.fft;
 
 import android.os.Build;
 import android.widget.Button;
@@ -8,6 +8,8 @@ import android.widget.Button;
 import androidx.annotation.RequiresApi;
 
 import com.example.myguitartuner.MainActivity;
+import com.example.myguitartuner.Model.FastFourierTransform;
+import com.example.myguitartuner.Model.RecordAudio;
 
 /**
  * Class that is in charge of recording and restarting the recording every so often, to make sure there are audio files that can be used to analyze the audio
