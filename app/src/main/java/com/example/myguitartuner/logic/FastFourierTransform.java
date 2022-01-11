@@ -1,4 +1,4 @@
-package com.example.myguitartuner.Model;
+package com.example.myguitartuner.logic;
 
 import static java.lang.Math.*;
 

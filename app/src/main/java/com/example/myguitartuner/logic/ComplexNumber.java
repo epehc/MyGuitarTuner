@@ -1,4 +1,4 @@
-package com.example.myguitartuner.Model;
+package com.example.myguitartuner.logic;
 
 /**
  * Complex number class, representing the behavior of a complex number

@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 import android.widget.Button;
 
 import com.example.myguitartuner.MainActivity;
-import com.example.myguitartuner.Model.StringFrequency;
+import com.example.myguitartuner.data.StringFrequency;
 import com.example.myguitartuner.R;
 
 /**

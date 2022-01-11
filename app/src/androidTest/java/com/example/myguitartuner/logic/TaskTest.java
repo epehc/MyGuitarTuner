@@ -1,4 +1,4 @@
-package com.example.myguitartuner.Model;
+package com.example.myguitartuner.logic;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNotNull;
 import androidx.test.core.app.ActivityScenario;
 
 import com.example.myguitartuner.MainActivity;
-import com.example.myguitartuner.Model.Task;
 
 import org.junit.After;
 import org.junit.Before;

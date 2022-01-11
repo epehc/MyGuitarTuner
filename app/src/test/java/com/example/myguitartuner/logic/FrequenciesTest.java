@@ -1,6 +1,8 @@
-package com.example.myguitartuner.Model;
+package com.example.myguitartuner.logic;
 
 import static org.junit.Assert.*;
+
+import com.example.myguitartuner.data.StringFrequency;
 
 import org.junit.Test;
 import org.mockito.Mockito;

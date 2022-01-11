@@ -1,6 +1,6 @@
-package com.example.myguitartuner.Model;
+package com.example.myguitartuner.data;
 
-import static com.example.myguitartuner.Model.MainActivity.APP_DIRECTORY;
+import static com.example.myguitartuner.MainActivity.APP_DIRECTORY;
 
 import android.annotation.SuppressLint;
 import android.media.AudioFormat;
