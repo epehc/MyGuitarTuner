@@ -93,7 +93,7 @@ public class MainActivityUITest {
     public void testSetIvProgress() {
         Drawable previousProgressImage = MainActivity.ivProgress.getDrawable();
 
-        MainActivity.setIvProgress(2);
+        mainActivity.setIvProgress(2);
 
         assertNotEquals(previousProgressImage, MainActivity.ivProgress.getDrawable());
 

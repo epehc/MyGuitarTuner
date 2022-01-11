@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.example.myguitartuner.View.UIUpdate;
-import com.example.myguitartuner.logic.Task;
+import com.example.myguitartuner.logic.MyButton;
 
 import java.io.File;
 
@@ -33,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView tv;
 
-    private Task buttonE4;
-    private Task buttonB;
-    private Task buttonG;
-    private Task buttonD;
-    private Task buttonA;
-    private Task buttonE2;
-    private Task buttonStop;
+    private MyButton buttonE4;
+    private MyButton buttonB;
+    private MyButton buttonG;
+    private MyButton buttonD;
+    private MyButton buttonA;
+    private MyButton buttonE2;
+    private MyButton buttonStop;
 
     private static final String PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).toString();
     public static final File APP_DIRECTORY = new File(PATH + "/" + "MyGuitarTuner");
@@ -66,20 +66,20 @@ public class MainActivity extends AppCompatActivity {
         ivProgress = (ImageView) findViewById(R.id.ivProgress);
         tv = (TextView) findViewById(R.id.tvStatus);
 
-        this.buttonE4 = new Task(findViewById(R.id.buttonE4), "E4", this);
-        this.buttonB = new Task(findViewById(R.id.buttonB), "B", this);
-        this.buttonG = new Task(findViewById(R.id.buttonG), "G", this);
-        this.buttonD = new Task(findViewById(R.id.buttonD), "D", this);
-        this.buttonA = new Task(findViewById(R.id.buttonA), "A", this);
-        this.buttonE2 = new Task(findViewById(R.id.buttonE2), "E2", this);
-        this.buttonStop = new Task(findViewById(R.id.buttonStop), "Stopped", this);
+        this.buttonE4 = new MyButton(findViewById(R.id.buttonE4), "E4", this);
+        this.buttonB = new MyButton(findViewById(R.id.buttonB), "B", this);
+        this.buttonG = new MyButton(findViewById(R.id.buttonG), "G", this);
+        this.buttonD = new MyButton(findViewById(R.id.buttonD), "D", this);
+        this.buttonA = new MyButton(findViewById(R.id.buttonA), "A", this);
+        this.buttonE2 = new MyButton(findViewById(R.id.buttonE2), "E2", this);
+        this.buttonStop = new MyButton(findViewById(R.id.buttonStop), "Stopped", this);
 
     }
 
     @Override
     protected void onDestroy(){
         super.onDestroy();
-        Task.getList().clear();
+        MyButton.getList().clear();
     }
 
 
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         ivbg.setImageResource(R.drawable.background_image);
     }
 
-    public static void setIvProgress(int i){
+    public void setIvProgress(int i){
         switch (i){
             case 0:
                 ivProgress.setImageResource(R.drawable.progress_0);

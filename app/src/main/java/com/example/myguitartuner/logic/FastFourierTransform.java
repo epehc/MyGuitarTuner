@@ -97,8 +97,7 @@ public class FastFourierTransform {
     private static double[] getAbsoluteValues(){
         double[] result = new double[buffer.length];
         for(int i = 0; i< buffer.length; i++){
-            result[i] = sqrt((buffer[i].getRe() * buffer[i].getRe()) + (buffer[i].getIm() * buffer[i].getIm()) );
-
+            result[i] = sqrt((buffer[i].getRe() * buffer[i].getRe()) + (buffer[i].getIm() * buffer[i].getIm()));
         }
 
         return result;

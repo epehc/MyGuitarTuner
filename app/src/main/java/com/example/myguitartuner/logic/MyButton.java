@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Custom Task class in charge of performing the recording every time the a button is clicked
+ * Custom MyButton class in charge of performing the recording every time the a button is clicked
  */
-public class Task {
+public class MyButton {
     /**
      * the button that will be passed in the constructor
      */
@@ -36,18 +36,18 @@ public class Task {
     private MainActivity main;
 
     /**
-     * static list to keep track of every active Task (used for the later method disableAllOtherButtons)
+     * static list to keep track of every active MyButton (used for the later method disableAllOtherButtons)
      */
-    private static List<Task> list = new ArrayList<>();
+    private static List<MyButton> list = new ArrayList<>();
 
     /**
-     * Constructor for the Task class
+     * Constructor for the MyButton class
      * @param button the button responsible for the actions to be taken.
      * @param fileName name of the file to be passed on to TaskThread object
      * @param main MainActivity Object that called to create this Object (used for updating UI in TaskThread)
      */
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public Task(Button button, String fileName, MainActivity main){
+    public MyButton(Button button, String fileName, MainActivity main){
         this.button = button;
         this.fileName = fileName;
         this.main = main;
@@ -55,7 +55,6 @@ public class Task {
             taskThread = new TaskThread(button, fileName, main);
         }
         list.add(this);
-        System.out.println(list.size());
     }
 
     /**
@@ -103,7 +102,7 @@ public class Task {
      * Getter for the List
      * @return
      */
-    public static List<Task> getList() {
+    public static List<MyButton> getList() {
         return list;
     }
 
@@ -139,7 +138,7 @@ public class Task {
      * and re-enable the rest of the buttons
      */
     public void disableAllOtherButtons(){
-        for(Task other: list){
+        for(MyButton other: list){
             if(getId() == R.id.buttonStop && other.getId() != R.id.buttonStop){
                 other.setEnabled(true);
                 if(other.taskThread != null && other.taskThread.getIsActive()){

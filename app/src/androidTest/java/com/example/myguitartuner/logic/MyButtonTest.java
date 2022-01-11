@@ -11,7 +11,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class TaskTest {
+public class MyButtonTest {
     ActivityScenario<MainActivity> activityScenario;
 
     @Before
@@ -21,15 +21,15 @@ public class TaskTest {
 
     @Test
     public void testAssertListSizeIsCorrect() {
-        assertEquals(7, Task.getList().size());
+        assertEquals(7, MyButton.getList().size());
     }
 
     @Test
     public void testTaskElementsAreNotNull() {
-        for(int i = 0; i < Task.getList().size()-2; i++){
-            assertNotNull(Task.getList().get(i).getTaskThread());
-            assertNotNull(Task.getList().get(i).getFileName());
-            assertNotNull(Task.getList().get(i).getMain());
+        for(int i = 0; i < MyButton.getList().size()-2; i++){
+            assertNotNull(MyButton.getList().get(i).getTaskThread());
+            assertNotNull(MyButton.getList().get(i).getFileName());
+            assertNotNull(MyButton.getList().get(i).getMain());
         }
 
     }
