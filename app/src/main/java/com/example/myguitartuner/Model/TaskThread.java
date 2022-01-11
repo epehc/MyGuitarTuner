@@ -1,4 +1,4 @@
-package com.example.myguitartuner.Controller;
+package com.example.myguitartuner.Model;
 
 import static com.example.myguitartuner.Model.FastFourierTransform.fft;
 
@@ -8,8 +8,6 @@ import android.widget.Button;
 import androidx.annotation.RequiresApi;
 
 import com.example.myguitartuner.MainActivity;
-import com.example.myguitartuner.Model.FastFourierTransform;
-import com.example.myguitartuner.Model.RecordAudio;
 
 /**
  * Class that is in charge of recording and restarting the recording every so often, to make sure there are audio files that can be used to analyze the audio
@@ -53,11 +51,19 @@ public class TaskThread extends Thread{
      * @param fileName the filename to be given to each recording.
      */
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public TaskThread(String fileName, MainActivity main, Button button){
+    public TaskThread(Button button, String fileName, MainActivity main){
         this.audioRecorder = new RecordAudio(fileName);
         this.main = main;
         this.button = button;
 
+    }
+
+    public double getHighestFrequency() {
+        return highestFrequency;
+    }
+
+    public void setHighestFrequency(double highestFrequency) {
+        this.highestFrequency = highestFrequency;
     }
 
     /**
@@ -94,7 +100,7 @@ public class TaskThread extends Thread{
                 audioRecorder.stopRecording();
                 fastFourierTransform = new FastFourierTransform(audioRecorder.getPcmData());
                 fft();
-                highestFrequency = fastFourierTransform.getHighestFrequency();
+                setHighestFrequency(fastFourierTransform.getHighestFrequency());
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -107,6 +113,6 @@ public class TaskThread extends Thread{
      * @param button to use for identification
      */
     public void callRunOnUiMethod(Button button){
-        main.runOnUi(highestFrequency, button);
+        main.runOnUi(getHighestFrequency(), button);
     }
 }

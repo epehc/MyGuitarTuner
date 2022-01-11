@@ -1,4 +1,4 @@
-package com.example.myguitartuner;
+package com.example.myguitartuner.View;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -9,14 +9,19 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.*;
-import androidx.test.espresso.Espresso.*;
+
+import android.graphics.drawable.Drawable;
 
 import androidx.test.core.app.ActivityScenario;
+import androidx.test.espresso.matcher.ViewMatchers;
+
+import com.example.myguitartuner.MainActivity;
+import com.example.myguitartuner.R;
 
 import org.junit.Before;
 import org.junit.Test;
 
-public class MainActivityTest {
+public class MainActivityUITest {
 
     private MainActivity mainActivity;
 
@@ -27,7 +32,7 @@ public class MainActivityTest {
 
     @Test
     public void testActivityInView() {
-        onView(withId(R.id.main)).check(matches(isDisplayed()));
+        onView(ViewMatchers.withId(R.id.main)).check(matches(isDisplayed()));
     }
 
     @Test
@@ -85,9 +90,13 @@ public class MainActivityTest {
     }
 
     @Test
-    public void testIsBackgroundImageChangingAfterPressingButton() {
-        //Perform a Click on a button
-        onView(withId(R.id.buttonB)).perform(click());
+    public void testSetIvProgress() {
+        Drawable previousProgressImage = MainActivity.ivProgress.getDrawable();
+
+        MainActivity.setIvProgress(2);
+
+        assertNotEquals(previousProgressImage, MainActivity.ivProgress.getDrawable());
 
     }
+
 }

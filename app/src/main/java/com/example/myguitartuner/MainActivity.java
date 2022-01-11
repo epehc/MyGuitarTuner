@@ -16,8 +16,9 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.example.myguitartuner.R;
 import com.example.myguitartuner.View.UIUpdate;
-import com.example.myguitartuner.Controller.Task;
+import com.example.myguitartuner.Model.Task;
 
 import java.io.File;
 
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private Task buttonStop;
     private static final String PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).toString();
     public static final File APP_DIRECTORY = new File(PATH + "/" + "MyGuitarTuner");
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -66,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
         this.buttonStop = new Task(findViewById(R.id.buttonStop), "Stopped", this);
 
     }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Task.getList().clear();
+    }
+
 
     public void checkPermissions(){
         boolean permissionGranted = ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED;
@@ -101,8 +110,8 @@ public class MainActivity extends AppCompatActivity {
     public static void setIvProgress(int i){
         switch (i){
             case 0:
-            ivProgress.setImageResource(R.drawable.progress_0);
-            break;
+                ivProgress.setImageResource(R.drawable.progress_0);
+                break;
             case 1:
                 ivProgress.setImageResource(R.drawable.progress_1);
                 break;

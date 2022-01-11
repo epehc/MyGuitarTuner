@@ -1,11 +1,11 @@
 package com.example.myguitartuner.Model;
 
 /**
- * Enum GuitarString that has all required values for comparing the frequencies
+ * Enum StringFrequency that has all required values for comparing the frequencies
  * @source https://en.wikipedia.org/wiki/Guitar_tunings
  * @source https://blog.sonicbids.com/eq-tips-for-eliminating-background-noise-from-your-mixes-a-table-of-note-frequencies
  */
-public enum GuitarString {
+public enum StringFrequency {
     /**
      * First String E_4
      */
@@ -129,7 +129,7 @@ public enum GuitarString {
      * @param plusFrequency the tolerated positive tolerance
      * @param minusFrequency the tolerated negative tolerance
      */
-    GuitarString(double targetFrequency, double plusFrequency, double minusFrequency) {
+    StringFrequency(double targetFrequency, double plusFrequency, double minusFrequency) {
         this.targetFrequency = targetFrequency;
         this.plusFrequency = plusFrequency;
         this.minusFrequency = minusFrequency;

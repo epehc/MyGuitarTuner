@@ -1,4 +1,4 @@
-package com.example.myguitartuner.Controller;
+package com.example.myguitartuner.Model;
 
 import android.os.Build;
 import android.widget.Button;
@@ -52,9 +52,10 @@ public class Task {
         this.fileName = fileName;
         this.main = main;
         if(getId() != R.id.buttonStop){
-            taskThread = new TaskThread(fileName, main, button);
+            taskThread = new TaskThread(button, fileName, main);
         }
         list.add(this);
+        System.out.println(list.size());
     }
 
     /**
@@ -69,7 +70,7 @@ public class Task {
         }
         disableAllOtherButtons();
         if(getId() != R.id.buttonStop){
-            taskThread = new TaskThread(fileName, main, button);
+            taskThread = new TaskThread(button, fileName, main);
             taskThread.start();
         }
     }
@@ -96,6 +97,38 @@ public class Task {
      */
     public int getId(){
         return getButton().getId();
+    }
+
+    /**
+     * Getter for the List
+     * @return
+     */
+    public static List<Task> getList() {
+        return list;
+    }
+
+    /**
+     * Getter for the TaskThread
+     * @return
+     */
+    public TaskThread getTaskThread() {
+        return taskThread;
+    }
+
+    /**
+     * Getter for fileName
+     * @return
+     */
+    public String getFileName() {
+        return fileName;
+    }
+
+    /**
+     * Getter for the MainActivity object
+     * @return
+     */
+    public MainActivity getMain() {
+        return main;
     }
 
     /**
