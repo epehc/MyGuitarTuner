@@ -1,5 +1,7 @@
 package com.example.myguitartuner.View;
 
+import static com.example.myguitartuner.MainActivity.ivProgress;
+
 import android.annotation.SuppressLint;
 import android.widget.Button;
 
@@ -214,4 +216,5 @@ public class UIUpdate implements Runnable {
                 break;
         }
     }
+
 }

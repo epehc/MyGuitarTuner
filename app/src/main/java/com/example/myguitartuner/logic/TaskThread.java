@@ -59,10 +59,18 @@ public class TaskThread extends Thread{
 
     }
 
+    /**
+     * Getter for highestFrequency
+     * @return
+     */
     public double getHighestFrequency() {
         return highestFrequency;
     }
 
+    /**
+     * Setter for highestfrequency
+     * @param highestFrequency
+     */
     public void setHighestFrequency(double highestFrequency) {
         this.highestFrequency = highestFrequency;
     }

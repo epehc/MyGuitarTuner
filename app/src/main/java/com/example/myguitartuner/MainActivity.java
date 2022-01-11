@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private Task buttonA;
     private Task buttonE2;
     private Task buttonStop;
+
     private static final String PATH = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS).toString();
     public static final File APP_DIRECTORY = new File(PATH + "/" + "MyGuitarTuner");
 
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         uiThread = Thread.currentThread();
         handler = new Handler();
+
 
         ivbg = (ImageView) findViewById(R.id.ivBackground);
         ivProgress = (ImageView) findViewById(R.id.ivProgress);
