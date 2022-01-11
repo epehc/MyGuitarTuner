@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyGuitarTuner">
         <activity
-            android:name=".logic.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
