@@ -5,6 +5,7 @@ import static java.lang.Math.*;
 
 /**
  * Class in charge of calculating the frequencies.
+ * Source: https://rosettacode.org/wiki/Fast_Fourier_transform#Java
  */
 public class FastFourierTransform {
 

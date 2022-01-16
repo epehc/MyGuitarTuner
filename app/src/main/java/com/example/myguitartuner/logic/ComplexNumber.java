@@ -2,6 +2,7 @@ package com.example.myguitartuner.logic;
 
 /**
  * Complex number class, representing the behavior of a complex number
+ * Source: Source: https://rosettacode.org/wiki/Fast_Fourier_transform#Java
  */
 public class ComplexNumber {
 
